@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        a:hover {
+            color: rgb(240, 236, 236);
+        }
+        
+        .con {
+            position: relative;
+            width: 100%;
+            height: 580px;
+            overflow: hidden;
+            /* background-color: rgb(170, 136, 136); */
+        }
+        
+        .about {
+            width: 50%;
+            margin: 80px;
+        }
+        
+        .about h3 {
+            font-size: 25px;
+            margin-top: 70px;
+            margin-bottom: 20px;
+        }
+        
+        .about p {
+            font-size: 15px;
+            width: 60%;
+            margin: 10px 0;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #5b636e;
+        }
+        
+        .card {
+            position: absolute;
+            /* 绝对定位 */
+            top: 50%;
+            /* 距上部 */
+            right: 0;
+            /* 距左部 */
+            width: 300px;
+            height: 400px;
+            background: #fff;
+            transform-style: preserve-3d;
+            /* 开启3D空间 */
+            transform: translate(-50%, -50%) perspective(2000px);
+            /* 移动X,Y */
+            box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5), 0 20px 100px rgba(0, 0, 0, 0.5);
+            /*阴影*/
+            transition: 1s;
+        }
+        
+        .card:hover {
+            transform: translate(-50%, -50%) perspective(2000px) rotate(-10deg);
+            box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5), 0 10px 100px rgba(0, 0, 0, 0.5);
+        }
+        
+        .card::before {
+            /*上边框*/
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            z-index: 10;
+            background: #5b636e;
+            transform: skewX(-45deg);
+            /*X轴扭曲*/
+        }
+        
+        .card::after {
+            /*右边框*/
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -5px;
+            width: 5px;
+            height: 100%;
+            background-color: #5b636e;
+        }
+        
+        .card .imgBox {
+            /*图片*/
+            user-select: none;
+            /*不可选取*/
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: url(./images/index/about.jpg);
+            background-size: 300px 400px;
+            transform-origin: left;
+            /*更改元素变形位置*/
+            transition: 1s cubic-bezier(.15, 1.7, .84, .58);
+        }
+        
+        .card .imgBox h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+            color: #5b636e;
+        }
+        
+        .card:hover .imgBox {
+            transform: rotateY(-155deg);
+            /*Y轴转动*/
+        }
+        
+        .card .details {
+            /*文本效果*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            padding: 40px;
+            z-index: -1;
+        }
+        
+        .card .details p {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header start -->
+    <section class="top">
+        <header>
+            <nav class="navbar">
+                <div class="logo fl">
+                    <a href="#"><img src="images/index/logo.png" alt=""></a>
+                </div>
+                <ul class="fr bar_list">
+                    <li>
+                        <a href="index.html" class="active">HOME</a>
+                    </li>
+                    <li>
+                        <a href="about.html">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">CONTECT</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+    </section>
+    <div class="con">
+        <div class="about">
+            <h3>ABOUT US</h3>
+            <p>我们致力于为冲浪爱好者推荐优秀的冲浪景点，让用户通过我们的网站了解中国的著名冲浪地点。 在这里，你不仅能得到想要的信息还能看到网站内美丽的风景，体验网页冲浪与海边冲浪的双重感受
+            </p>
+            <h3>We Can</h3>
+            <p>在这里，我们能为您提供丰富多彩的关于Surfing的信息，您不用再为不知道怎么选择冲浪地点而担心。我们会为您提供详细的图片和分析让您能够快速的了解每一个冲浪地点和周边环境，从而做出更好的选择</p>
+        </div>
+        <div class='card'>
+            <div class="imgBox">
+                <h2> 冲浪小知识</h2>
+            </div>
+            <div class='details'>
+                <h2>冲浪小知识</h2>
+                <p>冲浪运动是运动员站立在冲浪板上，或利用腹板、跪板、充气的橡皮垫、划艇、皮艇等驾驭海浪的一项水上运动。 冲浪运动起源于夏威夷，1915年，冲浪运动首行到南美洲大陆，2010年，首届中国海南万宁国际冲浪节举办，2020年12月7日，国际奥委会同意将冲浪列为2024年巴黎奥运会正式比赛项目。冲浪运动的最高组织机构是世界冲浪联盟，成立于1976年。 中国冲浪机构是中国极限运动协会，成立于2004年。</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

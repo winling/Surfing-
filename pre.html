@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surfing</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(216, 223, 224);
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .con {
+            position: relative;
+            /* top: 60px; */
+            margin: 30px 0;
+            width: 1000px;
+            height: 600px;
+            background: url(./images/index/pre.jpg) center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .box1,
+        .box2,
+        .box3,
+        .box4 {
+            position: absolute;
+            width: 1000px;
+            height: 600px;
+            /* 设置阴影 */
+            filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, .5));
+            background-size: cover;
+            opacity: .7;
+            transition: .5s;
+        }
+        
+        .box1::after,
+        .box2::after,
+        .box3::after,
+        .box4::after {
+            content: "";
+            position: absolute;
+            width: 1000px;
+            height: 600px;
+            background: url(./images/index/pre.jpg) center;
+        }
+        
+        .box1 {
+            left: -400px;
+            transform: rotateZ(100deg);
+            overflow: hidden;
+        }
+        
+        .box1::after {
+            transform: rotateZ(-100deg);
+        }
+        
+        .box2 {
+            left: -400px;
+            transform: rotateZ(-100deg);
+            overflow: hidden;
+        }
+        
+        .box2::after {
+            transform: rotateZ(100deg);
+        }
+        
+        .box3 {
+            right: -400px;
+            transform: rotateZ(105deg);
+            overflow: hidden;
+        }
+        
+        .box3::after {
+            transform: rotateZ(-105deg);
+        }
+        
+        .box4 {
+            right: -400px;
+            transform: rotateZ(-100deg);
+            overflow: hidden;
+        }
+        
+        .box4::after {
+            transform: rotateZ(100deg);
+        }
+        
+        .f {
+            opacity: 0;
+            font: 900 50px '';
+            /* 设置字体间距 */
+            letter-spacing: 10px;
+            color: rgb(60, 60, 70);
+            transition: .5s;
+        }
+        /* 设置动画 */
+        
+        .con:hover .box1 {
+            left: -550px;
+        }
+        
+        .con:hover .box2 {
+            left: -600px;
+        }
+        
+        .con:hover .box3 {
+            right: -550px;
+        }
+        
+        .con:hover .box4 {
+            right: -610px;
+        }
+        
+        .con:hover .f {
+            opacity: 1;
+        }
+        
+        .text-effect {
+            color: #223058d2;
+            font-family: 'Cabin Sketch';
+            font-size: 100px;
+            text-align: left;
+            text-transform: uppercase;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .text-effect span {
+            display: inline-block;
+            animation: animate 0.5s linear infinite both;
+        }
+        /* .text-effect span:nth-child(1),
+        .text-effect span:nth-child(4),
+        .text-effect span:nth-child(7),
+        .text-effect span:nth-child(10) {
+            color: #181818;
+        }
+        
+        .text-effect span:nth-child(2),
+        .text-effect span:nth-child(5),
+        .text-effect span:nth-child(8) {
+            color: #19191a;
+        } */
+        
+        @keyframes animate {
+            0%,
+            50%,
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                transform: rotate(4deg) scale(0.98);
+            }
+            75% {
+                transform: rotate(-4deg) scale(1.02);
+            }
+        }
+        
+        @media only screen and (max-width: 990px) {
+            .text-effect {
+                font-size: 100px;
+            }
+        }
+        
+        @media only screen and (max-width: 767px) {
+            .text-effect {
+                font-size: 80px;
+            }
+        }
+        
+        @media only screen and (max-width: 479px) {
+            .text-effect {
+                font-size: 60px;
+            }
+        }
+        
+        @media only screen and (max-width: 359px) {
+            .text-effect {
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+<div class="con">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+
+    <a href="index.html" class="f">
+        <div class="text-effect ">
+            <span>S</span><span>u</span><span>r</span><span>f</span><span>i</span><span>n</span><span>g</span>
+        </div>
+    </a>
+</div>
+
+<body>
+
+</body>
+
+</html>
